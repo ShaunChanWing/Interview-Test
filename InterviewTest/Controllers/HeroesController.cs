@@ -23,7 +23,57 @@ namespace InterviewTest.Controllers
                        new KeyValuePair<string, int>( "intelligence", 50),
                        new KeyValuePair<string, int>( "stamina", 2500 )
                    }
+               },
+               new Hero()
+               {
+                   name= "The Tick",
+                   power="Incredible strength and drama power",
+                   stats=
+                   new List<KeyValuePair<string, int>>()
+                   {
+                       new KeyValuePair<string, int>( "strength", 600 ),
+                       new KeyValuePair<string, int>( "intelligence", 5),
+                       new KeyValuePair<string, int>( "stamina", 250 )
+                   }
+               },
+               new Hero()
+               {
+                   name= "Iron Man",
+                   power="Genius",
+                   stats=
+                   new List<KeyValuePair<string, int>>()
+                   {
+                       new KeyValuePair<string, int>( "strength", 50 ),
+                       new KeyValuePair<string, int>( "intelligence", 10),
+                       new KeyValuePair<string, int>( "stamina", 25 )
+                   }
+               },
+               new Hero()
+               {
+                   name= "Batman",
+                   power="Has Lots of Money",
+                   stats=
+                   new List<KeyValuePair<string, int>>()
+                   {
+                       new KeyValuePair<string, int>( "strength", 50 ),
+                       new KeyValuePair<string, int>( "intelligence", 10),
+                       new KeyValuePair<string, int>( "stamina", 25 )
+                   }
+               },
+               new Hero()
+               {
+                   name= "Kick Ass",
+                   power="Nerve Damage",
+                   stats=
+                   new List<KeyValuePair<string, int>>()
+                   {
+                       new KeyValuePair<string, int>( "strength", 50 ),
+                       new KeyValuePair<string, int>( "intelligence", 10),
+                       new KeyValuePair<string, int>( "stamina", 25 )
+                   }
                }
+
+
             };
 
         // GET: api/Heroes

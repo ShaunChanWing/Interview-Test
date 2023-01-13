@@ -1,0 +1,40 @@
+<h1 class="test"></h1>
+
+<div class="container my-5">
+
+  <h2 class="heading">Tour of Heroes</h2>
+  <table class="table" *ngIf="heroes">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Power</th>
+        <th>Strength</th>
+        <th>Intelligence</th>
+        <th>Stamina</th>
+        <th>Evolve</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hero of heroes" [ngClass]="getRandomStyle()">
+        <td>{{ hero.name}}</td>
+        <td>{{ hero.power}}</td>
+
+        <!-- strength  -->
+        <td>{{ hero.stats[0].value}}</td>
+        <!-- intelligence  -->
+        <td>{{ hero.stats[1].value}}</td>
+        <!-- stamina  -->
+        <td>{{ hero.stats[2].value}}</td>
+
+        <td><button type="button" class="btn btn-danger" (click)="evolve()">Evolve</button></td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <!-- <p *ngIf="!employees || employees.length < 0">No employees found</p> -->
+</div>
+
+
