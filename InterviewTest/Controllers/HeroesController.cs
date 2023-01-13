@@ -22,7 +22,7 @@ namespace InterviewTest.Controllers
                        new KeyValuePair<string, int>( "strength", 5000 ),
                        new KeyValuePair<string, int>( "intelligence", 50),
                        new KeyValuePair<string, int>( "stamina", 2500 )
-                   }
+                   },
                },
                new Hero()
                {
@@ -76,11 +76,30 @@ namespace InterviewTest.Controllers
 
             };
 
-        // GET: api/Heroes
+        //private Hero[] villains = new Hero[] {
+        //       new Hero()
+        //       {
+        //           name= "Man Ray",
+        //           power="Strength from gamma radiation",
+        //           stats=
+        //           new List<KeyValuePair<string, int>>()
+        //           {
+        //               new KeyValuePair<string, int>( "strength", 5000 ),
+        //               new KeyValuePair<string, int>( "intelligence", 50),
+        //               new KeyValuePair<string, int>( "stamina", 2500 )
+        //           },
+        //       }
+  
+        //    };
+
+
+
+        // GET: api/Heroes //gets all heroes 
         [HttpGet]
         public IEnumerable<Hero> Get()
         {
             return this.heroes;
+            //return 
         }
 
         // GET: api/Heroes/5
@@ -90,10 +109,12 @@ namespace InterviewTest.Controllers
             return this.heroes.FirstOrDefault();
         }
 
-        // POST: api/Heroes
+        // POST: api/Heroes //Evolve the hero
         [HttpPost]
-        public void Post([FromBody] string value)
+        public string Post([FromBody] string value)
         {
+
+            return "hello from the other side";
         }
 
         // PUT: api/Heroes/5

@@ -18,4 +18,8 @@ export class ApiService {
     return this.http.get<Hero>(this.baseApiUrl + '/api/heroes')
 
   }
+
+  evolveHero(heroName) {
+    this.http.post(this.baseApiUrl + '/api/heroes',heroName)
+  }
 }

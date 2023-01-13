@@ -11,9 +11,9 @@ export class ListComponent implements OnInit {
 
   heroes
 
-  styles = ['randcolor1', 'randcolor2', 'randcolor3', 'randcolor4']
+  // styles = ['randcolor1', 'randcolor2', 'randcolor3', 'randcolor4']
 
-  changestyle
+  styles = ['randcolor1']
 
   constructor(private heroApiService : ApiService) {
 
@@ -31,8 +31,8 @@ export class ListComponent implements OnInit {
 
   //post evolution
 
-  evolve(){
-    console.log('Hero evolve')
+  evolve(hero){
+    this.heroApiService.evolveHero(hero)
   }
 
   getRandomStyle(){
