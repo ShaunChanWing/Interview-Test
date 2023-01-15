@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using InterviewTest.Data;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,7 @@ namespace InterviewTest
             services.AddCors();
             services.AddMvcCore().AddApiExplorer();
 
+            services.AddDbContext<HeroesAPIDbContext>(options => options.UseInMemoryDatabase("HeroesDb"));
             //services.AddControllers();
 
             services.AddSwaggerGen(c =>
