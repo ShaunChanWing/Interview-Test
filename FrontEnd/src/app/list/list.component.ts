@@ -11,9 +11,9 @@ export class ListComponent implements OnInit {
 
   heroes
 
-  // styles = ['randcolor1', 'randcolor2', 'randcolor3', 'randcolor4']
+  styles = ['randcolor1', 'randcolor2', 'randcolor3', 'randcolor4']
 
-  styles = ['randcolor1']
+  // styles = ['randcolor1']
 
   constructor(private heroApiService : ApiService) {
 

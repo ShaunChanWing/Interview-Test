@@ -111,10 +111,10 @@ namespace InterviewTest.Controllers
 
         // POST: api/Heroes //Evolve the hero
         [HttpPost]
-        public string Post([FromBody] string value)
+        public IActionResult Post([FromBody] string value)
         {
 
-            return "hello from the other side";
+            return Ok("hello from the other side");
         }
 
         // PUT: api/Heroes/5
