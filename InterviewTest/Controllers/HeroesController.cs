@@ -32,21 +32,24 @@ namespace InterviewTest.Controllers
 
         // POST: api/Heroes //AddHero
         [HttpPost]
-        public async Task<IActionResult> Post(AddHero addHero)
+        public async Task<IActionResult> Post(AddHero addHero ,string action)
         {
 
             var hero = new Hero()
             {
                 id = Guid.NewGuid(),
                 name = addHero.name,
-                power = addHero.power
-            };
+                power = addHero.power,
+                strength = addHero.strength,
+                intelligence = addHero.intelligence,
+                stamina = addHero.stamina
+                //stats = new List<HeroStats>()
+
+    };
 
             await dbContext.Heroes.AddAsync(hero);
             await dbContext.SaveChangesAsync();
 
-
-            
 
             return Ok(hero);
         }
@@ -54,14 +57,17 @@ namespace InterviewTest.Controllers
         // PUT: api/Heroes/5
         [HttpPut]
         [Route("{id:guid}")]
-        public async Task<IActionResult> Put([FromRoute] Guid id, EvolveHero evolveHero)
+        public async Task<IActionResult> Put([FromRoute] Guid id)
         {
             var hero = dbContext.Heroes.Find(id);
 
             if (hero != null)
             {
-                hero.name = evolveHero.name;
-                hero.power = evolveHero.power;
+
+                hero.evolve(hero);
+                //hero.name = evolveHero.name;
+                //hero.power = evolveHero.power;
+                
 
                 await dbContext.SaveChangesAsync();
 
@@ -73,9 +79,9 @@ namespace InterviewTest.Controllers
 
 
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

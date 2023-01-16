@@ -2,6 +2,9 @@ export interface Hero {
 
     name: string
     power: string
-    stats?: Array<{'key';'value'}>
+    strength : number
+    intelligence : number
+    stamina : number
+    // stats?: Array<{'key';'value'}>
 
 }

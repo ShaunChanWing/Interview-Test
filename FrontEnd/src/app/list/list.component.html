@@ -3,6 +3,17 @@
 <div class="container my-5">
 
   <h2 class="heading">Tour of Heroes</h2>
+
+  <!-- Button add hero -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Create Hero
+</button>
+<br><br>
+
+<div class="alert alert-primary" role="alert" *ngIf="name">
+  <h4> Hero Evolved Hero </h4>
+    Name : {{name}}     Strength : {{strenght}}    Intelligence : {{intelligence}}    Stamina : {{stamina}}
+</div>
   <table class="table" *ngIf="heroes">
     <thead>
       <tr>
@@ -20,13 +31,13 @@
         <td>{{ hero.power}}</td>
 
         <!-- strength  -->
-        <td>{{ hero.stats[0].value}}</td>
+        <td>{{ hero.strength}}</td>
         <!-- intelligence  -->
-        <td>{{ hero.stats[1].value}}</td>
+        <td>{{ hero.intelligence}}</td>
         <!-- stamina  -->
-        <td>{{ hero.stats[2].value}}</td>
+        <td>{{ hero.stamina}}</td>
 
-        <td><button type="button" class="btn btn-danger" (click)="evolve(hero.name)">Evolve</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="evolve(hero.id)">Evolve</button></td>
 
       </tr>
 
@@ -34,7 +45,48 @@
 
   </table>
 
-  <!-- <p *ngIf="!employees || employees.length < 0">No employees found</p> -->
+
 </div>
 
 
+
+
+
+<!--Hero Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Hero Creator</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- name  -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Hero Name" aria-label="Name" [(ngModel)]="name" aria-describedby="basic-addon1">
+        </div>
+        <!-- power  -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Hero Power" aria-label="Power" [(ngModel)]="power" aria-describedby="basic-addon1">
+        </div>
+        <!-- strength  -->
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" placeholder="Hero Strength" aria-label="Strength" [(ngModel)]="strenght" aria-describedby="basic-addon1">
+        </div>
+        <!-- intelligence  -->
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" placeholder="Hero Intelligence" aria-label="Username" [(ngModel)]="intelligence" aria-describedby="basic-addon1">
+        </div>
+        <!-- stamina  -->
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" placeholder="Hero Stamina" aria-label="Stamina" [(ngModel)]="stamina" aria-describedby="basic-addon1">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addHero()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

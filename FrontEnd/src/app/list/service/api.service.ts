@@ -19,7 +19,16 @@ export class ApiService {
 
   }
 
-  evolveHero(heroName) {
-    this.http.post(this.baseApiUrl + '/api/heroes',heroName)
+  evolveHero(heroId) {
+    return this.http.put<Hero>(this.baseApiUrl + '/api/heroes/' + heroId ,'')
+
+  }
+
+  addHero(heroInfo) {
+
+    // console.log(heroInfo)
+
+    return this.http.post<Hero>(this.baseApiUrl + '/api/heroes',heroInfo)
+
   }
 }
